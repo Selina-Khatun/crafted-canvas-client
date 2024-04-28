@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const Register = () => {
     return (
         <div>
-            <div className="h-full bg-gray-400 dark:bg-gray-900">
+            <div className="h-full bg-gray-50  dark:bg-gray-900">
 
                 <div className="mx-auto">
-                    <div className="flex justify-center px-6 py-12">
+                    <div className="flex justify-center  px-6 py-12">
 
-                        <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+                        <div className="w-full xl:w-3/4 my-[7%] lg:w-11/12 flex">
 
                             <div className="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
                                 style={{ backgroundImage: `url('https://source.unsplash.com/random/1920x1080?nature')` }}></div>

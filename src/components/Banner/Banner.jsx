@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
@@ -8,8 +7,8 @@ import { Navigation } from 'swiper/modules';
 const Banner = () => {
 
     return (
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper text-cyan-100 mb-[5%] rounded-b-xl  h-[90vh] ">
-            <SwiperSlide><div className="hero min-h-screen " style={{ backgroundImage: 'url(https://i.ibb.co/5c0yyHr/top-view-hands-knitting.jpg) ' }}>
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper text-cyan-100 mb-[5%] rounded-b-xl   ">
+            <SwiperSlide><div className="hero min-h-screen  " style={{ backgroundImage: 'url(https://i.ibb.co/5c0yyHr/top-view-hands-knitting.jpg) ' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-xl">

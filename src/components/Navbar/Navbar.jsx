@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className='sticky top-0 z-50 mx-4  '>
-            <div className="navbar  bg-transparent hover:relative hover:bg-white  hover:scale-105  transition duration-1000 ease-in  absolute">
+        <div className='sticky top-0 z-50 mx-4 '>
+            <div className="navbar  bg-transparent hover:relative hover:bg-white  hover:scale-105 p-5  transition duration-1000 ease-in  absolute">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
