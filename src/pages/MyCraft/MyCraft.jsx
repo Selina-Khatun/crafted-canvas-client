@@ -71,7 +71,7 @@ const MyCraft = () => {
             <div className="grid grid-cols-1   gap-5  py-7">
 
                 {
-                    crafts.map(item => <div key={item._id} className="card border h-72 card-side bg-base-100  shadow-xl">
+                    crafts?.map(item => <div key={item._id} className="card border h-72 card-side bg-base-100  shadow-xl">
                         <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
                         } /></figure>
                         <div className="flex-1 card-body">

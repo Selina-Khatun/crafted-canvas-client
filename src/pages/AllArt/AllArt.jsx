@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const AllArt = () => {
-    const crafts = useLoaderData()
-    console.log(crafts)
-    const { _id, photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, textarea, processingTime } = crafts;
+    
+   const {crafts}=useContext(AuthContext)
+//    console.log(crafts)
+
     return (
         <div>
 
@@ -23,16 +26,16 @@ const AllArt = () => {
                     </thead>
 
                     {
-                        crafts.map(craft => (
-                            <tbody key={craft.id}>
+                        crafts?.map(item => (
+                            <tbody key={item._id}>
 
                                 <tr className="bg-base-200">
-                                    <td><img src={photoUrl} alt="" /></td>
-                                    <th >{itemName}</th>
-                                    <td>{processingTime}</td>
-                                    <td>{price}</td>
-                                    <td>{stockStatus}</td>
-                                    <td><Link to={`/details/${_id}`}>
+                                    <td><img src={item.photoUrl} alt="" /></td>
+                                    <th >{item.itemName}</th>
+                                    <td>{item.processingTime}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.stockStatus}</td>
+                                    <td><Link to={`/details/${item._id}`}>
                                         <button className="btn hover:bg-green-300 rounded-3xl bg-green-600 px-[9%] text-white">View Details</button>
                                     </Link></td>
                                 </tr>

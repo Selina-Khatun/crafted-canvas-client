@@ -18,8 +18,6 @@ const AddCraft = () => {
         const email = form.email.value;
         const username = form.username.value;
         const textarea = form.textarea.value;
-
-
         const newCraft = { photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, email, username, textarea, processingTime }
         console.log(newCraft)
         fetch('http://localhost:5000/crafts', {
