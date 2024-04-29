@@ -21,25 +21,25 @@ const AddCraft = () => {
 
         const newCraft = { photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, email, username, textarea, processingTime }
         console.log(newCraft)
-        fetch('http://localhost:5000/craft', {
+        fetch('http://localhost:5000/crafts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newCraft)
         })
-        .then(response =>  response.json())
-        .then(data => {
-            console.log(data);
-           if(data.insertedId){
-            alert('ok')
-            form.reset();
-           }
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-         
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('ok')
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+
+            });
 
     }
 
@@ -47,8 +47,8 @@ const AddCraft = () => {
 
 
 
-        <section className=" py-10 ">
-            <div className="max-w-4xl p-6  mt-[5%] mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md dark:bg-gray-800">
+        <section className="  ">
+            <div className="max-w-4xl p-6   mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md dark:bg-gray-800">
 
                 <h1 className="text-xl font-bold text-white capitalize dark:text-white">Account settings</h1>
                 <form onSubmit={handleAddCraft}>
@@ -57,7 +57,7 @@ const AddCraft = () => {
 
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="itemName">Photo URL</label>
-                            <input type="url" id="photoUrl" name="photoUrl" placeholder='Enter Photo url' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required/>
+                            <input type="url" id="photoUrl" name="photoUrl" placeholder='Enter Photo url' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
 
                         {/*  item_name */}
@@ -66,15 +66,32 @@ const AddCraft = () => {
                             <input id="itemName" type="text" name="itemName" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
                         {/* subcategory_Name */}
+
+
                         <div>
+                            <label className="text-white dark:text-gray-200" htmlFor=" subcategoryName"> subcategory_Name</label>
+                            <select id="subcategoryName" type="text" name="subcategoryName" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required>
+                                <option> Embroidery</option>
+                                <option> Knitting & Crocheting</option>
+                                <option> Quilting</option>
+                                <option> Beadwork
+                                </option>
+                                <option>  Tie-Dyeing
+                                </option>
+                                <option>Macrame</option>
+
+                            </select>
+                        </div>
+
+                        {/* <div>
                             <label className="text-white dark:text-gray-200" htmlFor=" subcategoryName">  subcategory_Name</label>
                             <input id="subcategoryName" type="text" name="subcategoryName" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
-                        </div>
+                        </div> */}
 
                         {/*  price */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="price">price</label>
-                            <input id="price" type="number" name="price" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  required/>
+                            <input id="price" type="number" name="price" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
                         {/* customization */}
                         <div>
@@ -88,7 +105,7 @@ const AddCraft = () => {
                         {/* rating */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="rating">rating</label>
-                            <input id="rating" type="number" name="rating" className="block w-full py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  required/>
+                            <input id="rating" type="number" name="rating" className="block w-full py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
                         {/* processingTime */}
                         <div>
@@ -107,12 +124,12 @@ const AddCraft = () => {
                         {/*user email */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="emailAddress">user Email Address</label>
-                            <input id="emailAddress" type="email" name="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required/>
+                            <input id="emailAddress" type="email" name="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
                         {/* username */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="username">Username</label>
-                            <input id="username" type="text" name="username" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  required/>
+                            <input id="username" type="text" name="username" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
 
                         {/* short description */}

@@ -6,9 +6,9 @@ const Register = () => {
             <div className="h-full bg-gray-50  dark:bg-gray-900">
 
                 <div className="mx-auto">
-                    <div className="flex justify-center  px-6 py-12">
+                    <div className="flex justify-center  px-6 ">
 
-                        <div className="w-full xl:w-3/4 my-[7%] lg:w-11/12 flex">
+                        <div className="w-full xl:w-3/4 py-5  lg:w-11/12 flex">
 
                             <div className="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
                                 style={{ backgroundImage: `url('https://source.unsplash.com/random/1920x1080?nature')` }}></div>
@@ -45,14 +45,14 @@ const Register = () => {
                                     </div>
                                     <div className="mb-4">
                                         <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="email">
-                                            Email
+                                        photoURL
                                         </label>
                                         <input
                                             className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="email"
-                                            type="email"
-                                            name="email"
-                                            placeholder="Email"
+                                            id=" photoURL"
+                                            type="url"
+                                            name=" photoURL"
+                                            placeholder=" photoURL"
                                         />
                                     </div>
 
