@@ -12,6 +12,7 @@ import AllArt from "../pages/AllArt/AllArt";
 import AddCraft from "../pages/AddCraft/AddCraft";
 import UpdateCraft from "../pages/MyCraft/UpdateCraft";
 import Details from "../pages/AllArt/Details";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -27,33 +28,33 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>
             },
             {
-                path:'/myCraft',
-                element:<MyCraft></MyCraft>,
-                loader:()=>fetch('http://localhost:5000/crafts')
+                path: '/myCraft',
+                element: <PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/crafts')
             },
             {
-                path:'/allCraft',
-                element:<AllArt></AllArt>
+                path: '/allCraft',
+                element: <AllArt></AllArt>
             },
             {
-                path:'/addCraft',
-                element:<AddCraft></AddCraft>
+                path: '/addCraft',
+                element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute>
             },
             {
-                path:'/update/:id',
-                element: <UpdateCraft></UpdateCraft>,
-                loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
+                path: '/update/:id',
+                element: <PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
             },
             {
-                path:'/details/:id',
-                element: <Details></Details>,
-                loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
+                path: '/details/:id',
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
             }
-            
+
         ]
     },
 ]);
