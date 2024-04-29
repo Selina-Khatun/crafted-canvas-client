@@ -10,6 +10,8 @@ import Register from "../pages/Register/Register";
 import MyCraft from "../pages/MyCraft/MyCraft";
 import AllArt from "../pages/AllArt/AllArt";
 import AddCraft from "../pages/AddCraft/AddCraft";
+import UpdateCraft from "../pages/MyCraft/UpdateCraft";
+import Details from "../pages/AllArt/Details";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -40,8 +42,18 @@ const router = createBrowserRouter([
             {
                 path:'/addCraft',
                 element:<AddCraft></AddCraft>
+            },
+            {
+                path:'/update/:id',
+                element: <UpdateCraft></UpdateCraft>,
+                loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
+            },
+            {
+                path:'/details/:id',
+                element: <Details></Details>,
+                loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
             }
-
+            
         ]
     },
 ]);

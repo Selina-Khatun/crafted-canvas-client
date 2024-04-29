@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 const AddCraft = () => {
 
@@ -32,7 +33,13 @@ const AddCraft = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('ok')
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your work has been added",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
                     form.reset();
                 }
             })
@@ -50,7 +57,7 @@ const AddCraft = () => {
         <section className="  ">
             <div className="max-w-4xl p-6   mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md dark:bg-gray-800">
 
-                <h1 className="text-xl font-bold text-white capitalize dark:text-white">Account settings</h1>
+                <h1 className="text-2xl font-bold text-white capitalize dark:text-white">Add a new item</h1>
                 <form onSubmit={handleAddCraft}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         {/*  image */}
@@ -82,11 +89,6 @@ const AddCraft = () => {
 
                             </select>
                         </div>
-
-                        {/* <div>
-                            <label className="text-white dark:text-gray-200" htmlFor=" subcategoryName">  subcategory_Name</label>
-                            <input id="subcategoryName" type="text" name="subcategoryName" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
-                        </div> */}
 
                         {/*  price */}
                         <div>
