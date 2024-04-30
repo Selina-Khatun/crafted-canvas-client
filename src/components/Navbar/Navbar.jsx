@@ -2,13 +2,16 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../FirebaseProvider/FirebaseProvider';
+import ToggleBtn from '../ToggleBtn/ToggleBtn';
+import { useTheme } from '../../ThemeProvider/ThemeProvider';
 
 const Navbar = () => {
     const { logout, user } = useContext(AuthContext);
-
+    const { theme } = useTheme();
     return (
-        <div className='sticky top-0 z-50 mx-4 '>
-            <div className="navbar   rounded-2xl    bg-white    transition duration-1000 ease-in  ">
+        <div className={`sticky top-0 z-50 rounded-2xl mx-4  ${theme === 'dark' ? 'bg-black' : 'bg-white'} `}>
+
+            <div className={`navbar   rounded-2xl ${theme === 'dark' ? 'bg-black' : 'bg-white'}    bg-white    transition duration-1000 ease-in  `}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,10 +59,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
 
+
+                    <ToggleBtn />
                     {
                         user?.email ? <div className="group relative cursor-pointer py-2">
 
-                            <div className="flex items-center justify-between space-x-5 bg-white ">
+                            <div className={`flex items-center justify-between space-x-5 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`} >
                                 <a className="menu-hover my-2 py-2 text-base font-medium text-black lg:mx-4" >
 
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border border-zinc-400">

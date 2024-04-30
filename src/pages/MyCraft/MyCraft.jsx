@@ -67,7 +67,7 @@ const MyCraft = () => {
         <section className="w-[70%] mx-auto">
 
             <div className="flex border-2 border-red-300 rounded-md shadow-2xl w-[40%] mx-auto justify-end">
-                <select className="px-14 w-full py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
+                <select className="px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
                     <option value="All"> My All Art & Craft</option>
                     <option value="yes">Customization : Yes</option>
                     <option value="no">Customization : No</option>

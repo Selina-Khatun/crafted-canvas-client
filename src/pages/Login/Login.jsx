@@ -80,15 +80,9 @@ const Login = () => {
                     icon: "error",
                     title: "Oops...",
                     text: "Invalid email or password. Please try again!",
-
-
                 });
-
             })
-
     };
-
-
 
     const handleGoogleLogin = () => {
         googleLogin()
@@ -128,15 +122,18 @@ const Login = () => {
                                 {...register("email", { required: true })} />
                             {errors.email && <span className="font-semibold text-red-500">This field is required</span>}
                             <div className="relative">
+                                {errors.password && <span className="font-semibold text-red-500">This field is required</span>}
+
+
                                 <input className="p-2 rounded-xl border w-full" type={showPassword ? 'text' : 'password'} name="password" id="password" placeholder="••••••••"
                                     {...register("password", {
                                         required: true
 
                                     })} />
-                                <span onClick={() => setShowPassword(!showPassword)} className="absolute top-3.5 right-3">{showPassword ? <AiFillEye></AiFillEye> : <AiFillEyeInvisible></AiFillEyeInvisible>}</span>
+                                <span onClick={() => setShowPassword(!showPassword)} className="absolute top-3.5 right-1">{showPassword ? <AiFillEye></AiFillEye> : <AiFillEyeInvisible></AiFillEyeInvisible>}</span>
 
 
-                                {errors.password && <span className="font-semibold text-red-500">This field is required</span>}
+
                             </div>
                             <button className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium" type="submit">Login</button>
                         </form>

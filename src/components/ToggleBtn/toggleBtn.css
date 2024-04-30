@@ -1,13 +1,11 @@
-
-
-/* .light {
-    
+.light {
+    /* Light theme styles */
     background-color: #ffffff;
     color: #000000;
   }
   
   .dark {
-   
+    /* Dark theme styles */
     background-color: #333333;
     color: #ffffff;
-  } */
+  }
