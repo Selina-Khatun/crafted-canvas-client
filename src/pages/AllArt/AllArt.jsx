@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const AllArt = () => {
