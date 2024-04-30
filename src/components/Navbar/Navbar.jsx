@@ -60,11 +60,11 @@ const Navbar = () => {
                         user?.email ? <div className="group relative cursor-pointer py-2">
 
                             <div className="flex items-center justify-between space-x-5 bg-white ">
-                                <a className="menu-hover my-2 py-2 text-base font-medium text-black lg:mx-4" onClick="">
+                                <a className="menu-hover my-2 py-2 text-base font-medium text-black lg:mx-4" >
 
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border border-zinc-400">
                                         <div className="w-10 rounded-full">
-                                            <img alt="null" src={user?.photoURL
+                                            <img alt={user?.displayName} src={user?.photoURL
                                             } />
                                         </div>
                                     </div>
