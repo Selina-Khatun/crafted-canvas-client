@@ -2,6 +2,7 @@
 import Banner from '../../../components/Banner/Banner';
 
 import Categories from '../Categories/Categories';
+import CraftItem from '../CraftItems/CraftItem';
 
 
 const Home = () => {
@@ -19,7 +20,9 @@ const Home = () => {
             </div> */}
             <div>
                 <Banner />
+                <CraftItem></CraftItem>
                 <Categories  />
+
             </div>
         </>
     );
