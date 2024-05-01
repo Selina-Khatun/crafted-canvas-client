@@ -12,7 +12,7 @@ const CraftItem = () => {
 
                 {
                     crafts?.slice(0, 6).map(item =>
-                        <div key={item._id} className="card border  bg-base-100  shadow-xl">
+                        <div key={item._id} className="card border    shadow-xl">
                             <figure className="flex-1 p-5 hover:scale-105 transition-all duration-1000 ease-in-out hover:rotate-3  "><img className="rounded-2xl hover:-rotate-3 h-52 w-full transition-all duration-700 ease-in-out " src={item.photoUrl} alt={item.itemName
                             } /></figure>
                             <div className="flex-1 card-body">
@@ -30,7 +30,7 @@ const CraftItem = () => {
                                 <div className="card-actions justify-end">
                                     <Link to={`/details/${item._id}`} >
                                         <button
-                                            className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
+                                            className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-orange-200 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
 
                                             <span className="hidden md:inline-block">View Details</span>
                                         </button>

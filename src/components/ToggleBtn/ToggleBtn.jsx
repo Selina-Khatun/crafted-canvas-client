@@ -4,9 +4,7 @@ import './toggleBtn.css';
 
 
 const ToggleBtn = () => {
-//   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
-// const { theme, toggleTheme } = useContext(ThemeContext);
-const { theme, toggleTheme} = useTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <button type="button" onClick={toggleTheme} className="btn btn--icon" aria-label="toggle theme">
       {theme === 'dark' ? (
@@ -33,6 +31,9 @@ const { theme, toggleTheme} = useTheme();
         </svg>
       )}
     </button>
+
+
+
   );
 };
 

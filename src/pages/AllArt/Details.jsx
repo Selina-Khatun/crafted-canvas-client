@@ -84,11 +84,11 @@ const Details = () => {
                                     className=" rounded-3xl absolute  font-bold flex  right-0 flex-col bg-orange-200 py-1 px-4 text-gray-800 shadow-xl ">
 
                                     <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Authorize Email:    {email}
+                                    Authorized Email:    {email}
                                     </p>
 
                                     <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Authorize name:   {username}
+                                    Authorized name:   {username}
                                     </p>
 
                                 </div>

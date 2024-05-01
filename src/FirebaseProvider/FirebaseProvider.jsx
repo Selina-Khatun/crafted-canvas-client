@@ -61,7 +61,7 @@ const FirebaseProvider = ({ children }) => {
         signOut(auth)
         setUser(null)
     }
-    const allValues = { crafts, user, loading, googleLogin, createUser, updateUserProfile, logout, signInUser, githubLogin }
+    const allValues = { crafts, user, loading, googleLogin, createUser, updateUserProfile, logout, signInUser, githubLogin,setLoading }
     return (
         <AuthContext.Provider value={allValues}>
             {children}

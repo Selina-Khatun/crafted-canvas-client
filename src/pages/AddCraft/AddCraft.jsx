@@ -56,7 +56,7 @@ const AddCraft = () => {
 
 
         <section className="  ">
-            <div className="max-w-4xl p-6   mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md dark:bg-gray-800">
+            <div className="max-w-4xl p-6   mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md ">
 
                 <h1 className="text-2xl font-bold text-white capitalize dark:text-white">Add a new item</h1>
                 <form onSubmit={handleAddCraft}>

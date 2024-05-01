@@ -101,53 +101,55 @@ const MyCraft = () => {
                 </select>
             </div>
 
+            {
+                filteredCrafts.length > 0 ? (
+                    <div className="grid grid-cols-1   gap-5  py-7">
 
-            <div className="grid grid-cols-1   gap-5  py-7">
 
+                        {filteredCrafts.map(item => (
+                            <div key={item._id} className="card border h-72 card-side bg-base-100  shadow-xl">
+                                <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
+                                } /></figure>
+                                <div className="flex-1 card-body">
+                                    <h2 className="card-title text-3xl font-bold">{item.itemName
+                                    }</h2>
+                                    <div className="flex py-3 items-center">
+                                        <p className="font-bold text-2xl">Price: {item.price}$</p>
+                                        <p className="text-[#e59149] font-bold text-2xl">rating : {item.rating}</p>
+                                    </div>
+                                    <div className="flex pb-3 items-center">
 
-                {filteredCrafts.map(item => (
-                    <div key={item._id} className="card border h-72 card-side bg-base-100  shadow-xl">
-                        <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
-                        } /></figure>
-                        <div className="flex-1 card-body">
-                            <h2 className="card-title text-3xl font-bold">{item.itemName
-                            }</h2>
-                            <div className="flex py-3 items-center">
-                                <p className="font-bold text-2xl">Price: {item.price}$</p>
-                                <p className="text-[#e59149] font-bold text-2xl">rating : {item.rating}</p>
+                                        <p className="font-bold">Customization : {item.customization}</p>
+                                        <p className="font-semibold text-xl" >{item.stockStatus}</p>
+                                    </div>
+                                    <div className="card-actions justify-end">
+                                        <Link to={`/update/${item._id}`}>
+                                            <button
+                                                className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
+                                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                                                    stroke="currentColor" className="w-6 h-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+                                                </span>
+                                                <span className="hidden md:inline-block">Update</span>
+                                            </button>
+                                        </Link>
+                                        <button onClick={() => handleDelete(item._id)} className="btn btn-square btn-outline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                        </button>
+
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex pb-3 items-center">
+                        ))}
 
-                                <p className="font-bold">Customization : {item.customization}</p>
-                                <p className="font-semibold text-xl" >{item.stockStatus}</p>
-                            </div>
-                            <div className="card-actions justify-end">
-                                <Link to={`/update/${item._id}`}>
-                                    <button
-                                        className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
-                                        <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
-                                            stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round"
-                                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                        </svg>
-                                        </span>
-                                        <span className="hidden md:inline-block">Update</span>
-                                    </button>
-                                </Link>
-                                <button onClick={() => handleDelete(item._id)} className="btn btn-square btn-outline">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                </button>
-
-                            </div>
-                        </div>
                     </div>
-                ))}
+                ) : (
+                    <div className="text-center flex items-center justify-center font-bold  text-red-600 text-5xl h-[50vh]">You didn't add any item</div>
+                )
+            }
 
-
-
-
-
-            </div>
         </section>
     );
 };
