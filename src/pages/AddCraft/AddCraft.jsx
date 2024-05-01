@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const AddCraft = () => {
-
+    const { user } = useContext(AuthContext);
+    // console.log(user);
     const handleAddCraft = e => {
-        console.log('button is clicked')
+        // console.log('button is clicked')
         e.preventDefault();
 
         const form = e.target;
@@ -37,7 +40,7 @@ const AddCraft = () => {
                         title: "Your work has been added",
                         showConfirmButton: false,
                         timer: 1500
-                      });
+                    });
                     form.reset();
                 }
             })
@@ -124,12 +127,13 @@ const AddCraft = () => {
                         {/*user email */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="emailAddress">user Email Address</label>
-                            <input id="emailAddress" type="email" name="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
+                            <input id="emailAddress" type="email" name="email" defaultValue={user.email} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
                         {/* username */}
                         <div>
                             <label className="text-white dark:text-gray-200" htmlFor="username">Username</label>
-                            <input id="username" type="text" name="username" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
+                            <input id="username" type="text" defaultValue={user.displayName
+                            } name="username" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required />
                         </div>
 
                         {/* short description */}

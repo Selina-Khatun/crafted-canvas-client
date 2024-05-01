@@ -1,14 +1,41 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const MyCraft = () => {
-
+    const { user, } = useContext(AuthContext);
     const myCrafts = useLoaderData();
-    console.log(myCrafts);
+    // console.log(myCrafts);
     const [crafts, setCrafts] = useState(myCrafts)
     const [selectedFilter, setSelectedFilter] = useState('All');
     const [filteredCrafts, setFilteredCrafts] = useState([]);
+
+
+    useEffect(() => {
+
+        const fetchCrafts = async () => {
+            try {
+                const response = await fetch(`http://localhost:5000/crafts/email/${user.email}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                    setCrafts(data);
+                } else {
+                    console.error('Failed to fetch crafts');
+                }
+            } catch (error) {
+                console.error('Error fetching crafts:', error);
+            }
+        };
+
+        if (user) {
+            fetchCrafts();
+        }
+    }, [user]);
+
+
+
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -47,7 +74,7 @@ const MyCraft = () => {
 
     useEffect(() => {
         const filterCrafts = () => {
-            const filteredData = myCrafts.filter(item => {
+            const filteredData = crafts.filter(item => {
                 if (selectedFilter === 'yes') {
                     return item.customization === 'yes';
                 } else if (selectedFilter === 'no') {
@@ -60,7 +87,7 @@ const MyCraft = () => {
         };
 
         filterCrafts();
-    }, [selectedFilter, myCrafts]);
+    }, [selectedFilter, crafts]);
 
 
     return (
@@ -68,7 +95,7 @@ const MyCraft = () => {
 
             <div className="flex border-2 border-red-300 rounded-md shadow-2xl w-[40%] mx-auto justify-end">
                 <select className="px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
-                    <option value="All"> My All Art & Craft</option>
+                    <option value="All"> My All Art & Craft ({crafts.length})</option>
                     <option value="yes">Customization : Yes</option>
                     <option value="no">Customization : No</option>
                 </select>
@@ -117,7 +144,7 @@ const MyCraft = () => {
                 ))}
 
 
-               
+
 
 
             </div>

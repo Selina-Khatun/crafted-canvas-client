@@ -8,7 +8,7 @@ const Details = () => {
     // console.log('id', _id);
     console.log('allCrafts', allCrafts);
 
-    const { _id, photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, textarea, processingTime } = allCrafts;
+    const { photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, email, username, textarea, processingTime } = allCrafts;
 
     return (
         <div>
@@ -33,14 +33,8 @@ const Details = () => {
                             <p className="text-gray-600 dark:text-gray-300 text-xl mb-4">
                                 Category  : {subcategoryName}
                             </p>
-
-
-
                             <div className="rating rating-sm mb-3 items-center">
-
-
                                 <h1 className="mr-4">Rating({rating})</h1>
-
 
 
                                 <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
@@ -75,13 +69,28 @@ const Details = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mb-4">
-                                <span className="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
-                                <div className="flex items-center mt-2">
-                                    <button className="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
+                            <div className="flex">
+
+                                <div className="mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
+                                    <div className="flex items-center mt-2">
+                                        <button className="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
+                                        <button className="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
+                                        <button className="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
+                                        <button className="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
+                                    </div>
+                                </div>
+                                <div
+                                    className=" rounded-3xl absolute  font-bold flex  right-0 flex-col bg-orange-200 py-1 px-4 text-gray-800 shadow-xl ">
+
+                                    <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    Authorize Email:    {email}
+                                    </p>
+
+                                    <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    Authorize name:   {username}
+                                    </p>
+
                                 </div>
                             </div>
                             <div className="mb-4">
@@ -94,12 +103,16 @@ const Details = () => {
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XXL</button>
                                 </div>
                             </div>
+
+
                             <div>
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                                     {textarea}
                                 </p>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

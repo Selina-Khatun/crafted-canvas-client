@@ -20,8 +20,9 @@ const Home = () => {
             </div> */}
             <div>
                 <Banner />
+                <Categories />
                 <CraftItem></CraftItem>
-                <Categories  />
+
 
             </div>
         </>

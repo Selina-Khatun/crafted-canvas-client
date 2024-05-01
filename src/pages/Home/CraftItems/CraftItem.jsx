@@ -7,13 +7,13 @@ const CraftItem = () => {
     const { crafts } = useContext(AuthContext)
     return (
         <>
-            <h1 className="text-4xl text-center font-bold">Craft Items</h1>
+            <h1 className="text-4xl text-center text-black font-bold">Craft Items</h1>
             <div className='grid grid-cols-1 my-[5%] md:grid-cols-2 lg:grid-cols-3 gap-10'>
 
                 {
                     crafts?.slice(0, 6).map(item =>
                         <div key={item._id} className="card border  bg-base-100  shadow-xl">
-                            <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
+                            <figure className="flex-1 p-5 hover:scale-105 transition-all duration-1000 ease-in-out hover:rotate-3  "><img className="rounded-2xl hover:-rotate-3 h-52 w-full transition-all duration-700 ease-in-out " src={item.photoUrl} alt={item.itemName
                             } /></figure>
                             <div className="flex-1 card-body">
                                 <h2 className="card-title text-3xl font-bold">{item.itemName
@@ -28,7 +28,7 @@ const CraftItem = () => {
                                     <p className="font-semibold text-xl" >{item.stockStatus}</p>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    <Link >
+                                    <Link to={`/details/${item._id}`} >
                                         <button
                                             className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
 

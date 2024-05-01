@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
         <div className={`sticky top-0 z-50 rounded-2xl mx-4  ${theme === 'dark' ? 'bg-black' : 'bg-white'} `}>
 
-            <div className={`navbar   rounded-2xl ${theme === 'dark' ? 'bg-black' : 'bg-white'}    bg-white    transition duration-1000 ease-in  `}>
+            <div className={`navbar   rounded-2xl ${theme === 'dark' ? 'bg-black' : 'bg-white'} transition duration-1000 ease-in  `}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
