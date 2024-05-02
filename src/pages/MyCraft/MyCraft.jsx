@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const MyCraft = () => {
-    const { user, } = useContext(AuthContext);
+    const { user,loading, setLoading } = useContext(AuthContext);
     const myCrafts = useLoaderData();
     // console.log(myCrafts);
     const [crafts, setCrafts] = useState(myCrafts)

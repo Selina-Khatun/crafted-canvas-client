@@ -3,8 +3,9 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const AddCraft = () => {
-    const { user } = useContext(AuthContext);
+    const { user, setCrafts } = useContext(AuthContext);
     // console.log(user);
+    // const [crafts, setCrafts] = useState([]);
     const handleAddCraft = e => {
         // console.log('button is clicked')
         e.preventDefault();
@@ -41,6 +42,10 @@ const AddCraft = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+
+                    setCrafts(prevCrafts => [...prevCrafts, newCraft]);
+                    // eslint-disable-next-line no-unused-vars
+                    // console.log("Crafts after adding:", [...prevCrafts, newCraft]);
                     form.reset();
                 }
             })

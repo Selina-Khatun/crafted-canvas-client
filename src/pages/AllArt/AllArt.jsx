@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
@@ -6,8 +6,12 @@ import { useTheme } from "../../ThemeProvider/ThemeProvider";
 const AllArt = () => {
 
     const { crafts } = useContext(AuthContext)
-    //    console.log(crafts)
     const { theme } = useTheme();
+    const [updatedCrafts, setUpdatedCrafts] = useState(crafts);
+    //    console.log(crafts)
+    useEffect(() => {
+        setUpdatedCrafts(crafts);
+    }, [crafts]);
     return (
         <div>
 
@@ -27,7 +31,7 @@ const AllArt = () => {
                     </thead>
 
                     {
-                        crafts?.map(item => (
+                        updatedCrafts?.map(item => (
                             <tbody key={item._id} >
 
                                 <tr className="">
