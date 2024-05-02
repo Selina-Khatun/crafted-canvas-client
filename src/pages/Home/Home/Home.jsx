@@ -1,5 +1,6 @@
 
 import Banner from '../../../components/Banner/Banner';
+import AboutUs from '../AboutUs/AboutUs';
 
 import Categories from '../Categories/Categories';
 import CraftItem from '../CraftItems/CraftItem';
@@ -22,7 +23,7 @@ const Home = () => {
                 <Banner />
                 <Categories />
                 <CraftItem></CraftItem>
-
+                <AboutUs></AboutUs>
 
             </div>
         </>
