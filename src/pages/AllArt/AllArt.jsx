@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
 import './AllArt.css'
 const AllArt = () => {
 
-    const { crafts } = useContext(AuthContext)
+    // const { crafts } = useContext(AuthContext);
+    const crafts = useLoaderData();
     const { theme } = useTheme();
     const [updatedCrafts, setUpdatedCrafts] = useState(crafts);
     //    console.log(crafts)

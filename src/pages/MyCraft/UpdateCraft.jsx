@@ -25,7 +25,7 @@ const {_id, photoUrl, itemName, subcategoryName, price, customization, rating, s
 
         const updatedCraft = { photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, textarea, processingTime }
         console.log(updatedCraft)
-        fetch(`http://localhost:5000/crafts/${_id}`, {
+        fetch(`https://crafted-canvas-server.vercel.app/crafts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

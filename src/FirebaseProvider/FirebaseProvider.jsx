@@ -15,7 +15,7 @@ const FirebaseProvider = ({ children }) => {
     // console.log(user);
 
     useEffect(() => {
-        fetch('http://localhost:5000/crafts')
+        fetch('https://crafted-canvas-server.vercel.app/crafts')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

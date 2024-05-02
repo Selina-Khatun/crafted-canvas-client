@@ -34,11 +34,12 @@ const router = createBrowserRouter([
             {
                 path: '/myCraft',
                 element: <PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/crafts')
+                loader: () => fetch('https://crafted-canvas-server.vercel.app/crafts')
             },
             {
                 path: '/allCraft',
-                element: <PrivateRoute><AllArt></AllArt></PrivateRoute>
+                element: <PrivateRoute><AllArt></AllArt></PrivateRoute>,
+                loader: () => fetch('https://crafted-canvas-server.vercel.app/crafts')
             },
             {
                 path: '/addCraft',
@@ -47,12 +48,12 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
+                loader: ({ params }) => fetch(`https://crafted-canvas-server.vercel.app/crafts/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/crafts/${params.id}`)
+                loader: ({ params }) => fetch(`https://crafted-canvas-server.vercel.app/crafts/${params.id}`)
             }
 
         ]

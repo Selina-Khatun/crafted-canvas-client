@@ -24,7 +24,7 @@ const AddCraft = () => {
         const textarea = form.textarea.value;
         const newCraft = { photoUrl, itemName, subcategoryName, price, customization, rating, stockStatus, email, username, textarea, processingTime }
         console.log(newCraft)
-        fetch('http://localhost:5000/crafts', {
+        fetch('https://crafted-canvas-server.vercel.app/crafts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -4,10 +4,10 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const MyCraft = () => {
-    const { user } = useContext(AuthContext);
+    const { user ,setCrafts} = useContext(AuthContext);
     const myCrafts = useLoaderData();
     // console.log(myCrafts);
-    const [crafts, setCrafts] = useState(myCrafts)
+    const [craft, setCraft] = useState(myCrafts)
     const [selectedFilter, setSelectedFilter] = useState('All');
     const [filteredCrafts, setFilteredCrafts] = useState([]);
 
@@ -16,11 +16,11 @@ const MyCraft = () => {
 
         const fetchCrafts = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/crafts/email/${user.email}`);
+                const response = await fetch(`https://crafted-canvas-server.vercel.app/crafts/email/${user.email}`);
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);
-                    setCrafts(data);
+                    setCraft(data);
                 } else {
                     console.error('Failed to fetch crafts');
                 }
@@ -49,7 +49,7 @@ const MyCraft = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/crafts/${_id}`, {
+                fetch(`https://crafted-canvas-server.vercel.app/crafts/${_id}`, {
                     method: 'DELETE'
                 })
 
@@ -63,8 +63,9 @@ const MyCraft = () => {
                                 icon: "success"
                             })
 
-                            const remaining = crafts.filter(craft => craft._id !== _id)
-                            setCrafts(remaining);
+                            const remaining = craft.filter(craft => craft._id !== _id)
+                            // setCrafts(remaining);
+                            setCraft(remaining);
                         }
 
                     })
@@ -74,7 +75,7 @@ const MyCraft = () => {
 
     useEffect(() => {
         const filterCrafts = () => {
-            const filteredData = crafts.filter(item => {
+            const filteredData = craft.filter(item => {
                 if (selectedFilter === 'yes') {
                     return item.customization === 'yes';
                 } else if (selectedFilter === 'no') {
@@ -87,7 +88,7 @@ const MyCraft = () => {
         };
 
         filterCrafts();
-    }, [selectedFilter, crafts]);
+    }, [selectedFilter, craft]);
 
 
     return (
@@ -95,7 +96,7 @@ const MyCraft = () => {
 
             <div className="flex border-2 border-red-300 rounded-md shadow-2xl lg:w-[40%] mx-auto justify-end">
                 <select className="lg:px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
-                    <option value="All"> My All Art & Craft ({crafts.length})</option>
+                    <option value="All"> My All Art & Craft ({craft.length})</option>
                     <option value="yes">Customization : Yes</option>
                     <option value="no">Customization : No</option>
                 </select>
