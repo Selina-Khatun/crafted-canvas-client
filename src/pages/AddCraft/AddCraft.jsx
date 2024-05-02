@@ -44,8 +44,6 @@ const AddCraft = () => {
                     });
 
                     setCrafts(prevCrafts => [...prevCrafts, newCraft]);
-                    // eslint-disable-next-line no-unused-vars
-                    // console.log("Crafts after adding:", [...prevCrafts, newCraft]);
                     form.reset();
                 }
             })

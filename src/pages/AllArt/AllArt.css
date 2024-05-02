@@ -1,0 +1,10 @@
+@media screen and (max-width: 992px) {
+    .table :where(th, td) {
+        padding-left: 1rem;}
+  }
+
+
+@media screen and (max-width: 600px) {
+.table :where(th, td) {
+     padding-left: 0rem;}
+}

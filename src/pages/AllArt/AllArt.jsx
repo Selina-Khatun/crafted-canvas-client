@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
-
+import './AllArt.css';
 const AllArt = () => {
 
     const { crafts } = useContext(AuthContext)
@@ -15,11 +15,11 @@ const AllArt = () => {
     return (
         <div>
 
-            <div className={`overflow-x-auto ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
-                <table className={`table  ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+            <div className={`overflow-x-auto  ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+                <table className={`table max-w-xs px-1  lg:max-w-full mx-auto ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
                     {/* head */}
                     <thead>
-                        <tr className="text-2xl text-orange-500">
+                        <tr className="md:text-2xl px-1 text-orange-500">
                             <th>photo</th>
                             <th>Name</th>
                             <th>Time</th>
@@ -32,12 +32,12 @@ const AllArt = () => {
 
                     {
                         updatedCrafts?.map(item => (
-                            <tbody key={item._id} >
+                            <tbody key={item._id} className="px-0" >
 
-                                <tr className="">
+                                <tr className=" text-xs  md:text-base ">
                                     <td>
                                         <div className="avatar">
-                                            <div className="w-24 rounded">
+                                            <div className="md:w-24 rounded">
                                                 <img src={item.photoUrl} />
                                             </div>
                                         </div></td>
@@ -46,7 +46,7 @@ const AllArt = () => {
                                     <td>{item.price}</td>
                                     <td>{item.stockStatus}</td>
                                     <td><Link to={`/details/${item._id}`}>
-                                        <button className="btn hover:bg-orange-500 rounded-3xl bg-orange-400 px-[9%] text-white">View Details</button>
+                                        <button className=" md:btn hover:bg-orange-500 rounded-3xl md:bg-orange-400 md:px-[9%] ">View Details</button>
                                     </Link></td>
                                 </tr>
 

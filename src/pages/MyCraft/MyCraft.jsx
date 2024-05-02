@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const MyCraft = () => {
-    const { user,loading, setLoading } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const myCrafts = useLoaderData();
     // console.log(myCrafts);
     const [crafts, setCrafts] = useState(myCrafts)
@@ -91,10 +91,10 @@ const MyCraft = () => {
 
 
     return (
-        <section className="w-[70%] mx-auto">
+        <section className="lg:w-[70%] w-[95%] mx-auto">
 
-            <div className="flex border-2 border-red-300 rounded-md shadow-2xl w-[40%] mx-auto justify-end">
-                <select className="px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
+            <div className="flex border-2 border-red-300 rounded-md shadow-2xl lg:w-[40%] mx-auto justify-end">
+                <select className="lg:px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
                     <option value="All"> My All Art & Craft ({crafts.length})</option>
                     <option value="yes">Customization : Yes</option>
                     <option value="no">Customization : No</option>
@@ -107,7 +107,7 @@ const MyCraft = () => {
 
 
                         {filteredCrafts.map(item => (
-                            <div key={item._id} className="card border h-72 card-side bg-base-100  shadow-xl">
+                            <div key={item._id} className="card border flex-col md:flex-row lg:h-72 card-side bg-base-100  shadow-xl">
                                 <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
                                 } /></figure>
                                 <div className="flex-1 card-body">

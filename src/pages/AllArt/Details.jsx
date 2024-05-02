@@ -81,7 +81,7 @@ const Details = () => {
                                     </div>
                                 </div>
                                 <div
-                                    className=" rounded-3xl absolute  font-bold flex  right-0 flex-col bg-orange-200 py-1 px-4 text-gray-800 shadow-xl ">
+                                    className=" rounded-3xl lg:absolute  font-bold flex  right-0 flex-col bg-orange-200 py-1 px-4 text-gray-800 shadow-xl ">
 
                                     <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
                                     Authorized Email:    {email}

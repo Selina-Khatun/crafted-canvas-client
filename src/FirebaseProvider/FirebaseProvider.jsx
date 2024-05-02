@@ -19,7 +19,8 @@ const FirebaseProvider = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
-                setCrafts(data);  
+                setCrafts(data); 
+                
             });
             setLoading(true);
     }, [])
