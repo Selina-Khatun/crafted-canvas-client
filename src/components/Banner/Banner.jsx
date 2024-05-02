@@ -14,7 +14,9 @@ const Banner = () => {
                     <div className="max-w-xl">
                         <h1 className="mb-5 text-5xl font-bold"> Knitting & Crocheting</h1>
                         <p className="mb-5">Knitting and crocheting are popular needlework crafts that involve creating fabric from yarn or thread using specialized needles or hooks.</p>
-                        <button className="btn btn-outline bg-[#dfa674] text-cyan-100  hover:bg-[#d67e32] border-none">Get Started</button>
+                        <button type="button" className="rounded-full border-2 border-neutral-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-60 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200" data-te-ripple-init data-te-ripple-color="light">
+                                        Get started
+                                    </button>
                     </div>
                 </div>
             </div></SwiperSlide>
@@ -25,7 +27,9 @@ const Banner = () => {
                         <div className="max-w-xl">
                             <h1 className="mb-5 text-5xl font-bold"> Embroidery</h1>
                             <p className="mb-5">Embroidery is a versatile and intricate needlework technique that involves decorating fabric with thread, yarn, or other materials to create patterns, designs, or images.</p>
-                            <button className="btn btn-outline bg-[#dfa674] hover:bg-[#d67e32] border-none">Get Started</button>
+                            <button type="button" className="rounded-full border-2 border-neutral-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-60 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200" data-te-ripple-init data-te-ripple-color="light">
+                            Get started
+                                    </button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +41,9 @@ const Banner = () => {
                         <div className="max-w-xl">
                             <h1 className="mb-5 text-5xl font-bold"> Macrame</h1>
                             <p className="mb-5">Tie-dyeing is a fabric dyeing technique that involves twisting, folding, or bunching fabric and then tying it tightly with string or rubber bands before applying dye.</p>
-                            <button className="btn btn-outline bg-[#dfa674] hover:bg-[#d67e32] border-none">Get Started</button>
+                            <button type="button" className="rounded-full border-2 border-neutral-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-60 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200" data-te-ripple-init data-te-ripple-color="light">
+                            Get started
+                                    </button>
                         </div>
                     </div>
                 </div>
@@ -48,7 +54,9 @@ const Banner = () => {
                     <div className="max-w-xl">
                         <h1 className="mb-5 text-5xl font-bold"> Tie-Dyeing</h1>
                         <p className="mb-5">Macrame is a craft technique that involves creating intricate patterns and designs by tying knots in cords or strings. Originating centuries ago, macrame has evolved into a popular form</p>
-                        <button className="btn btn-outline bg-[#dfa674] hover:bg-[#d67e32] border-none">Get Started</button>
+                        <button type="button" className="rounded-full border-2 border-neutral-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-60 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200" data-te-ripple-init data-te-ripple-color="light">
+                                       Get started
+                                    </button>
                     </div>
                 </div>
             </div></SwiperSlide>

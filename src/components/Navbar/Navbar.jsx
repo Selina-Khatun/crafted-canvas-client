@@ -19,17 +19,17 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink className={({ isActive }) =>
-                                isActive ? " text-[#e59149] font-extrabold   px-4 rounded-lg py-2 lg:py-2 mr-5   underline" : "font-bold mr-4 py-2 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all "
+                                isActive ? " text-[#e59149] font-extrabold   px-4 rounded-lg py-2 mr-5   underline" : "font-bold mr-4 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all "
                             } to={'/'}>Home</NavLink>
 
                             <NavLink className={({ isActive }) =>
-                                isActive ? " text-[#e59149] font-extrabold    px-4 rounded-lg py-2 lg:py-2 mr-5   underline" : "font-bold mr-4 py-2 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
+                                isActive ? " text-[#e59149] font-extrabold    px-4 rounded-lg py-2 mr-5   underline" : "font-bold mr-4 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
                             } to={'/myCraft'}>My Art&Craft List</NavLink>
                             <NavLink className={({ isActive }) =>
-                                isActive ? " text-[#e59149] font-extrabold  px-4 rounded-lg py-2 lg:py-2 mr-5   underline" : "font-bold mr-4 py-2 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
+                                isActive ? " text-[#e59149] font-extrabold  px-4 rounded-lg py-2 mr-5   underline" : "font-bold mr-4 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
                             } to={'/allCraft'}>All Art & craft Items</NavLink>
                             <NavLink className={({ isActive }) =>
-                                isActive ? " text-[#e59149] font-extrabold  px-4 rounded-lg py-2 lg:py-2 mr-5   underline" : "font-bold mr-4 py-2 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
+                                isActive ? " text-[#e59149] font-extrabold  px-4 rounded-lg py-2 mr-5   underline" : "font-bold mr-4 text-[#dfa674] hover:text-[#e59149] hover:scale-110  transition-all"
                             } to={'/addCraft'}>Add Craft Item</NavLink>
                         </ul>
                     </div>

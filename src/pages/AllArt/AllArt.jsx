@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
-import './AllArt.css';
+import './AllArt.css'
 const AllArt = () => {
 
     const { crafts } = useContext(AuthContext)
@@ -15,7 +15,7 @@ const AllArt = () => {
     return (
         <div>
 
-            <div className={`overflow-x-auto  ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+            <div className={`overflow-x-auto lg:w-full ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
                 <table className={`table max-w-xs px-1  lg:max-w-full mx-auto ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
                     {/* head */}
                     <thead>
