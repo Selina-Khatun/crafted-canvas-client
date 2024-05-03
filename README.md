@@ -1,5 +1,5 @@
 # Website Name : Crafted Canvas
-## live site from firebase : https://crafted-canvas-client.web.app
+## live site from firebase : [Crafted Canvas](https://crafted-canvas-client.web.app)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
