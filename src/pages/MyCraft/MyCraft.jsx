@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { Helmet } from "react-helmet-async";
 
 const MyCraft = () => {
     const { user ,setCrafts} = useContext(AuthContext);
@@ -94,6 +95,12 @@ const MyCraft = () => {
     return (
         <section className="lg:w-[70%] w-[95%] mx-auto">
 
+<Helmet>
+                <title>craftedCanvas ||
+                My Art&Craft List
+                </title>
+
+            </Helmet>
             <div className="flex border-2 border-red-300 rounded-md shadow-2xl lg:w-[40%] mx-auto justify-end">
                 <select className="lg:px-14 w-full text-black py-2 text-xl font-bold" value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)}>
                     <option value="All"> My All Art & Craft ({craft.length})</option>
@@ -108,7 +115,7 @@ const MyCraft = () => {
 
 
                         {filteredCrafts.map(item => (
-                            <div key={item._id} className="card border flex-col md:flex-row lg:h-72 card-side bg-base-100  shadow-xl">
+                            <div key={item._id} className="card border flex-col md:flex-row lg:h-72 card-side  shadow-xl">
                                 <figure className="flex-1 p-5 "><img className="rounded-2xl " src={item.photoUrl} alt={item.itemName
                                 } /></figure>
                                 <div className="flex-1 card-body">

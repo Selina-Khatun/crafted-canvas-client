@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -55,6 +56,9 @@ const {_id, photoUrl, itemName, subcategoryName, price, customization, rating, s
     return (
 
         <section className="  ">
+             <Helmet>
+                <title>craftedCanvas ||UpdateCraft</title>
+            </Helmet>
             <div className="max-w-4xl p-6   mb-5 mx-auto bg-slate-700 rounded-md shadow-md dark:bg-gray-800">
 
                 <h1 className="text-xl font-bold text-white capitalize dark:text-white">Update your item</h1>

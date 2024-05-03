@@ -1,14 +1,14 @@
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
-
+import { Tooltip } from 'react-tooltip'
 const Footer = () => {
     const { theme } = useTheme();
     return (
         <div>
-            <footer className={`shadow-2xl mt-[5%] ${theme === 'dark' ? 'bg-slate-500 text-black' : 'bg-slate-100'} `}>
+            <footer className={`shadow-2xl mt-[5%] ${theme === 'dark' ? ' ' : 'bg-slate-100'} `}>
                 <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-6 sm:px-6 lg:space-y-16 lg:px-8">
                     <div className="sm:flex sm:items-center sm:justify-between">
-                        <div className="text-teal-600 dark:text-teal-300">
-                        <img className='w-[40%]' src="https://i.ibb.co/2YpTwZG/download-removebg-preview-2.png" alt="" />
+                        <div className="">
+                            <img className='w-[40%]' src="https://i.ibb.co/2YpTwZG/download-removebg-preview-2.png" alt="" />
                         </div>
 
                         <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
@@ -17,10 +17,13 @@ const Footer = () => {
                                     href="#"
                                     rel="noreferrer"
                                     target="_blank"
-                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-content="Facebook"
+                                    data-tooltip-place="top"
+                                    className="  transition hover:opacity-75 "
                                 >
                                     <span className="sr-only">Facebook</span>
-
+                                    <Tooltip id="my-tooltip" />
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path
                                             fillRule="evenodd"
@@ -36,10 +39,13 @@ const Footer = () => {
                                     href="#"
                                     rel="noreferrer"
                                     target="_blank"
-                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-content="Instagram"
+                                    data-tooltip-place="top"
+                                    className=" transition hover:opacity-75 "
                                 >
                                     <span className="sr-only">Instagram</span>
-
+                                    <Tooltip id="my-tooltip" />
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path
                                             fillRule="evenodd"
@@ -52,12 +58,19 @@ const Footer = () => {
 
                             <li>
                                 <a
+                                    
                                     href="#"
                                     rel="noreferrer"
                                     target="_blank"
-                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-place="top"
+                                    className=" my-anchor-element transition hover:opacity-75  "
                                 >
-                                    <span className="sr-only">Twitter</span>
+
+                                    <Tooltip anchorSelect=".my-anchor-element" place="top">
+                                        <span className="">Twitter</span>
+                                    </Tooltip>
+
 
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path
@@ -72,10 +85,13 @@ const Footer = () => {
                                     href="#"
                                     rel="noreferrer"
                                     target="_blank"
-                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-content="GitHub"
+                                    data-tooltip-place="top"
+                                    className=" transition hover:opacity-75 dark:text-gray-200"
                                 >
-                                    <span className="sr-only">GitHub</span>
-
+                                   
+                                    <Tooltip id="my-tooltip" />
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path
                                             fillRule="evenodd"
@@ -91,10 +107,13 @@ const Footer = () => {
                                     href="#"
                                     rel="noreferrer"
                                     target="_blank"
-                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-content="Dribbble"
+                                    data-tooltip-place="top"
+                                    className="  transition hover:opacity-75 "
                                 >
-                                    <span className="sr-only">Dribbble</span>
-
+                                  
+                                    <Tooltip id="my-tooltip" />
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path
                                             fillRule="evenodd"
@@ -111,35 +130,35 @@ const Footer = () => {
                         className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800"
                     >
                         <div>
-                            <p className="font-medium text-gray-900 dark:text-white">Services</p>
+                            <p className="font-medium  dark:text-white">Services</p>
 
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className=" transition hover:opacity-75 dark:text-gray-50">
                                         1on1 Coaching
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Company Review
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Accounts Review
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         HR Consulting
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         SEO Optimisation
                                     </a>
                                 </li>
@@ -151,19 +170,19 @@ const Footer = () => {
 
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         About
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Meet the Team
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Accounts Review
                                     </a>
                                 </li>
@@ -175,19 +194,19 @@ const Footer = () => {
 
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Contact
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         FAQs
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Live Chat
                                     </a>
                                 </li>
@@ -199,25 +218,25 @@ const Footer = () => {
 
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Accessibility
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Returns Policy
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Refund Policy
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                    <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-50">
                                         Hiring Statistics
                                     </a>
                                 </li>

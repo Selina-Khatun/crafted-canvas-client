@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useTheme } from "../../ThemeProvider/ThemeProvider";
 import './AllArt.css'
+import { Helmet } from "react-helmet-async";
 const AllArt = () => {
 
     // const { crafts } = useContext(AuthContext);
@@ -15,6 +16,9 @@ const AllArt = () => {
     }, [crafts]);
     return (
         <div>
+            <Helmet>
+                <title>craftedCanvas || All Art & craft Items</title>
+            </Helmet>
 
             <div className={`overflow-x-auto lg:w-full ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
                 <table className={`table max-w-xs px-1  lg:max-w-full mx-auto ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>

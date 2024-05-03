@@ -32,7 +32,7 @@ const CraftItem = () => {
                                         <button
                                             className="text-slate-800 hover:text-slate-700 text-lg bg-white hover:bg-orange-200 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
 
-                                            <span className="hidden md:inline-block">View Details</span>
+                                            <span className=" md:inline-block">View Details</span>
                                         </button>
                                     </Link>
 

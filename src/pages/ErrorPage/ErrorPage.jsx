@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 
 const ErrorPage = () => {
     return (
         <div>
+            <Helmet>
+                <title>craftedCanvas || ErrorPage</title>
+
+            </Helmet>
             <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://source.unsplash.com/random/1920x1080?nature')`}}
                 >
                 <div className="max-w-md mx-auto text-center bg-white bg-opacity-90 p-8 rounded-lg shadow-lg"  >

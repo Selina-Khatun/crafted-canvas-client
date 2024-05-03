@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { Helmet } from "react-helmet-async";
 
 const AddCraft = () => {
     const { user, setCrafts } = useContext(AuthContext);
@@ -59,6 +60,13 @@ const AddCraft = () => {
 
 
         <section className="  ">
+
+            <Helmet>
+                <title>craftedCanvas ||
+                    Add Craft Item
+                </title>
+
+            </Helmet>
             <div className="max-w-4xl p-6   mb-5 mx-auto bg-[#dfa674] rounded-md shadow-md ">
 
                 <h1 className="text-2xl font-bold text-white capitalize dark:text-white">Add a new item</h1>

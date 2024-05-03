@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
@@ -12,6 +13,10 @@ const Details = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>craftedCanvas || Details </title>
+            </Helmet>
             <div className="bg-gray-100 dark:bg-gray-800 py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row -mx-4">
@@ -69,7 +74,7 @@ const Details = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex md:flex-row flex-col">
 
                                 <div className="mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
@@ -84,11 +89,11 @@ const Details = () => {
                                     className=" rounded-3xl lg:absolute  font-bold flex  right-0 flex-col bg-orange-200 py-1 px-4 text-gray-800 shadow-xl ">
 
                                     <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Authorized Email:    {email}
+                                        Authorized Email:    {email}
                                     </p>
 
                                     <p className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Authorized name:   {username}
+                                        Authorized name:   {username}
                                     </p>
 
                                 </div>
