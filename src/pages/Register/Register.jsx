@@ -3,18 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
-import { FaEye } from "react-icons/fa";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Helmet } from "react-helmet-async";
 const Register = () => {
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
-    // console.log(user);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm()
+   
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [verificationError, setVerificationError] = useState('');
     const [showPassword, setShowPassword] = useState()
     const navigate = useNavigate();
@@ -46,15 +41,34 @@ const Register = () => {
                     title: "You have successfully registered ",
                     showConfirmButton: false,
                     timer: 1500
-                });
+
+                }
+
+                );
+                reset();
+                navigate(from)
                 updateUserProfile(name, photoURL)
                     .then(() => {
 
                         navigate(from)
+
                     })
                 // console.log(user)
 
             })
+            .catch((error) => {
+               
+                if (error.code === 'auth/email-already-in-use') {
+                    
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Email is already in use.",
+                      
+                      });
+                      reset();
+                } 
+            });
 
     }
 
@@ -127,7 +141,7 @@ const Register = () => {
                                             <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-white" htmlFor="password">
                                                 Password
                                             </label>
-                                            <input 
+                                            <input
                                                 className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline relative"
                                                 id="password"
                                                 type={showPassword ? 'text' : 'password'}
@@ -148,7 +162,7 @@ const Register = () => {
                                     <div className="mb-6 text-center">
                                         <button
                                             className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                                            type="submit" 
+                                            type="submit"
                                         >
                                             Register Account
                                         </button>

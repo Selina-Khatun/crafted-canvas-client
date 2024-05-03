@@ -172,7 +172,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="md:block hidden w-1/2">
-                        <img className="rounded-2xl max-h-[1600px]" src="https://images.unsplash.com/photo-1552010099-5dc86fcfaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmVzaHxlbnwwfDF8fHwxNzEyMTU4MDk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="login form image" />
+                        <img className="rounded-2xl h-[65vh] hover:scale-105 transition ease-in duration-300" src="https://source.unsplash.com/random/1920x1080?nature" alt="login form image" />
                     </div>
                 </div>
             </section>
